@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    @RenderSection("styles", false)
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header bg-danger">
+                <h1>Desenvolvimento em ASP.NET MVC<small class="text-danger">Utilizando o Bootrap</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 col-md-3 bg-success">
+                <ul class="nav nav-pills nav-stacked">
+                    <li id="liHome"role="presentation" class="active"><a href="#">Home</a></li>
+                    <li id="liCategorias" role="presentation">@Html.ActionLink("Categoria", "Index", "Categorias")</li>
+                    <li li="liForncedores" role="presentation">@Html.ActionLink("Fabricante", "Index", "Fabricantes")</li>
+                </ul>
+            </div>
+            <div class="col-xs-9 col-md-9">
+                <br />
+                @RenderBody()
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-xs-12 col-md-12 bg-danger">
+                <small>Layout com Bootstrap</small>
+            </div>
+        </div>
+            <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+            <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+            @RenderSection("ScriptPage", false)
+    </div>
+</body>
+</html>
